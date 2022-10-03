@@ -1,0 +1,24 @@
+#include <iostream>
+#include <math.h>
+#include <limits>
+using namespace std;
+int main() {
+    float X, h = 0.1, y;
+    float a = 0, b = 1;
+    
+   
+    
+
+
+    cout << "x \t\t\t\t Y\n";
+    for (X = a; X <= b; X += h) {
+        y = cos(X) / sin(X) + 1;
+        cout << X << "\t\t\t\t" << y << "\n";
+    }
+    cout << "max(y)==" << max(X,y)<< '\n';
+   cout << "min(y)==" << min(X,y) << '\n';
+   cout << max(X,y) * min(X,y);
+   
+    
+    return 0;
+}
