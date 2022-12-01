@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+void find_elements();
+int main()
+{ 
+    
+    find_elements();
+    
+}
+
+void find_elements()
+{
+    int n;
+    cout << "Enter n:" << endl;
+    cin >> n;
+    for (int i = 0; i <n ; i++)
+    
+    {
+        int k;
+        int s;
+        k = i % 10;
+        s = k * k * k;
+        k = i / 10 % 10;
+        s = s + k* k * k;
+        k = i / 100;
+        s = s + k* k * k;
+        if (i == s) {
+            cout << i << "\n";
+            }
+    }
+}
