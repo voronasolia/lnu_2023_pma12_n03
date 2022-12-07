@@ -1,0 +1,76 @@
+#include <iostream> 
+
+using namespace std;
+
+int main()
+{
+    int n, m, max, k, l, o;
+    l = 0;
+    o = 0;
+    cout << "Enter n:";
+    cin >> n;
+    cout << "Enter m:";
+    cin >> m;
+
+    int** pArray;
+    pArray = new int* [n];
+
+    for (int i = 0; i < n; i++)
+    {
+        pArray[i] = new int[m];
+    }
+
+    //Set values  
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            cin >> pArray[i][j];
+        }
+    }
+
+    cout << endl;
+    //Print array  
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            cout << pArray[i][j] << "\t";
+        }
+        cout << endl;
+
+    }
+    //find max 
+    max = pArray[0][0];
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (max < abs(pArray[i][j])) {
+                max = abs(pArray[i][j]);
+                l = i;
+                o = j;
+            }
+        }
+    }
+    cout << "Max = " << max << endl;
+
+    cout << "Print k: " << endl;
+    cin >> k;
+    
+        for (int j = 0; j < m; j++)
+            {
+                swap(pArray[l][j],pArray[k][j]);
+            }
+        for (int i = 0; i < n; i++)
+        {
+            swap(pArray[i][o], pArray[i][k]);
+        }
+    
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < m; j++)
+            {
+                cout << pArray[i][j] << "\t";
+            }
+            cout << endl;
+        }
+}
